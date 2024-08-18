@@ -2,6 +2,11 @@
 import {useEffect, useMemo, useState} from "react";
 import Particles, {initParticlesEngine} from "@tsparticles/react";
 import {loadFull} from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+import Image from "next/image";
+import Link from "next/link";
+import NavBar from "./components/navbar";
+import Titles from "./components/titles";
+import {infos} from "../../public/images/info";
 
 const App = () => {
 	const [init, setInit] = useState(false);
@@ -23,7 +28,7 @@ const App = () => {
 		() => ({
 			particles: {
 				number: {
-					value: 236,
+					value: 300,
 					density: {
 						enable: true,
 						value_area: 800,
@@ -58,12 +63,12 @@ const App = () => {
 					},
 				},
 				size: {
-					value: 2,
+					value: 0.5,
 					random: true,
 					anim: {
 						enable: false,
-						speed: 65.77825419640895,
-						size_min: 19.48985309523228,
+						speed: 4,
+						size_min: 0.3,
 						sync: false,
 					},
 				},
@@ -75,13 +80,13 @@ const App = () => {
 					width: 1,
 				},
 				move: {
-					enable: true,
-					speed: 14.430708547789706,
-					direction: "bottom-right",
+					enable: false,
+					speed: 1,
+					direction: "none",
 					random: true,
 					straight: false,
 					out_mode: "out",
-					bounce: true,
+					bounce: false,
 					attract: {
 						enable: false,
 						rotateX: 600,
@@ -93,11 +98,11 @@ const App = () => {
 				detect_on: "canvas",
 				events: {
 					onhover: {
-						enable: false,
+						enable: true,
 						mode: "bubble",
 					},
 					onclick: {
-						enable: false,
+						enable: true,
 						mode: "repulse",
 					},
 					resize: true,
@@ -135,11 +140,70 @@ const App = () => {
 
 	if (init) {
 		return (
-			<Particles
-				id="tsparticles"
-				particlesLoaded={particlesLoaded}
-				options={options}
-			/>
+			<main className="bg-black h-dvh w-dvw">
+				<Particles
+					id="tsparticles"
+					particlesLoaded={particlesLoaded}
+					options={options}
+				/>
+				<NavBar />
+				<div className="flex w-dvw h-3/4">
+					<div className="flex-1 ml-6 mt-10 text-3xl align-middle">
+						<div className="ml-20 mt-24">
+							<div className="text-6xl">Hello there !</div>
+							<div className="mt-8">
+								<div className="mt-3">I{"'"}M Anandha Dinesh</div>
+								<div className="mt-4">
+									<Titles />
+								</div>
+								<div className="mt-10 ml-10 mb-5 text-sm justify-center">
+									{" "}
+									Connect with me in{" "}
+									<div className="flex mt-3 flex-grow mr-4">
+										<div className="flex space-x-5">
+											<a
+												target="_blank"
+												href={"mailto:anandhadinesh80@gmail.com"}
+											>
+												<Image
+													src={"/images/mail.png"}
+													alt="Email"
+													width={30}
+													height={30}
+												/>
+											</a>
+											<a target="_blank" href={infos.social.linkedin}>
+												<Image
+													src={"/images/linkedin.svg"}
+													alt="linkedin"
+													width={30}
+													height={30}
+												/>
+											</a>
+											<a href={infos.social.github} target="_blank">
+												<Image
+													src={"/images/github.svg"}
+													alt="github"
+													width={35}
+													height={35}
+												/>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="hidden sm:flex sm:flex-1 relative h-full justify-cente align-middle">
+						<Image
+							src="/images/devimg.png"
+							alt="Dev"
+							layout="fill"
+							objectFit="contain"
+						/>
+					</div>
+				</div>
+			</main>
 		);
 	}
 

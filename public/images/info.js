@@ -8,4 +8,7 @@ export const infos = {
 		github: "https://github.com/Anandha-Dinesh",
 		linkedin: "https://linkedin.com/in/anandha-dinesh/",
 	},
+	projects: {
+		proj1: "",
+	},
 };

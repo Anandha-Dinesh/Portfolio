@@ -7,6 +7,8 @@ import Link from "next/link";
 import NavBar from "./components/navbar";
 import Titles from "./components/titles";
 import {infos} from "../../public/images/info";
+import Icons from "./components/icons";
+import ProjectTile from "./components/project_tile";
 
 const App = () => {
 	const [init, setInit] = useState(false);
@@ -80,7 +82,7 @@ const App = () => {
 					width: 1,
 				},
 				move: {
-					enable: false,
+					enable: true,
 					speed: 1,
 					direction: "none",
 					random: true,
@@ -147,12 +149,20 @@ const App = () => {
 					options={options}
 				/>
 				<NavBar />
-				<div className="flex w-dvw h-3/4">
+				<div className="flex w-dvw h-dvh overflow-hidden">
 					<div className="flex-1 ml-6 mt-10 text-3xl align-middle">
-						<div className="ml-20 mt-24">
-							<div className="text-6xl">Hello there !</div>
+						<div className="ml-20 mt-24 font-mono">
+							<div className="text-6xl font-semibold font-mono">
+								Hello there !
+							</div>
 							<div className="mt-8">
-								<div className="mt-3">I{"'"}M Anandha Dinesh</div>
+								<div className="mt-3">
+									I{"'"}m <span className="font-semibold">Anandha Dinesh</span>
+									{"  "}
+									<span className="text-sm align-text-bottom">
+										But You can call me Anand😉
+									</span>
+								</div>
 								<div className="mt-4">
 									<Titles />
 								</div>
@@ -162,39 +172,32 @@ const App = () => {
 									<div className="flex mt-3 flex-grow mr-4">
 										<div className="flex space-x-5">
 											<a
+												href="mailto:anandhadinesh80@gmail.com"
 												target="_blank"
-												href={"mailto:anandhadinesh80@gmail.com"}
 											>
-												<Image
-													src={"/images/mail.png"}
+												<Icons
+													link={"mailto:anandhadinesh80@gmail.com"}
 													alt="Email"
-													width={30}
-													height={30}
+													img={"/images/mail.png"}
 												/>
 											</a>
-											<a target="_blank" href={infos.social.linkedin}>
-												<Image
-													src={"/images/linkedin.svg"}
-													alt="linkedin"
-													width={30}
-													height={30}
-												/>
-											</a>
-											<a href={infos.social.github} target="_blank">
-												<Image
-													src={"/images/github.svg"}
-													alt="github"
-													width={35}
-													height={35}
-												/>
-											</a>
+											<Icons
+												link={infos.social.linkedin}
+												alt="linkedin"
+												img={"/images/linkedin.svg"}
+											/>
+											<Icons
+												link={infos.social.github}
+												alt={"github"}
+												img={"/images/github.svg"}
+											/>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div className="hidden sm:flex sm:flex-1 relative h-full justify-cente align-middle">
+					<div className="hidden sm:flex sm:flex-1 relative h-dvh justify-center align-middle">
 						<Image
 							src="/images/devimg.png"
 							alt="Dev"
@@ -202,6 +205,13 @@ const App = () => {
 							objectFit="contain"
 						/>
 					</div>
+				</div>
+				<div>
+					<div className="flex justify-center font-bold text-4xl font-mono w-full mb-20">
+						Projects
+					</div>
+
+					<ProjectTile />
 				</div>
 			</main>
 		);

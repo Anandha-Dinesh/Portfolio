@@ -3,18 +3,15 @@ import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import Image from "next/image";
-import Link from "next/link";
+import Intro from "./sections/intro";
 import NavBar from "./components/navbar";
-import Titles from "./components/titles";
-import { infos } from "../../public/images/info";
-import Icons from "./components/icons";
-import ProjectTile from "./components/project_tile";
-import NameCard from "./components/namecard";
+import Aboutme from "./sections/aboutme";
+import Projects from "./sections/projects";
+import WorkExperienceTimeline from "./sections/work_experience";
+import Footer from "./sections/footer";
 
 const App = () => {
   const [init, setInit] = useState(false);
-
-  // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadFull(engine);
@@ -151,47 +148,7 @@ const App = () => {
         />
         <NavBar />
         <div className="flex w-dvw h-dvh overflow-hidden">
-          <div className="flex-1 ml-6 mt-10 text-3xl align-middle">
-            <div className="ml-20 mt-24 font-mono">
-              <div className="text-6xl font-semibold font-mono">
-                Hello there !
-              </div>
-              <div className="mt-8">
-                <NameCard />
-                <div className="mt-4">
-                  <Titles />
-                </div>
-                <div className="mt-10 ml-10 mb-5 text-sm justify-center">
-                  {" "}
-                  Connect with me in{" "}
-                  <div className="flex mt-3 flex-grow mr-4">
-                    <div className="flex space-x-5">
-                      <a
-                        href="mailto:anandhadinesh80@gmail.com"
-                        target="_blank"
-                      >
-                        <Icons
-                          link={"mailto:anandhadinesh80@gmail.com"}
-                          alt="Email"
-                          img={"/images/mail.png"}
-                        />
-                      </a>
-                      <Icons
-                        link={infos.social.linkedin}
-                        alt="linkedin"
-                        img={"/images/linkedin.svg"}
-                      />
-                      <Icons
-                        link={infos.social.github}
-                        alt={"github"}
-                        img={"/images/github.svg"}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Intro />
           <div className="hidden sm:flex sm:flex-1 relative h-dvh justify-center align-middle">
             <Image
               src="/images/devimg.png"
@@ -201,30 +158,11 @@ const App = () => {
             />
           </div>
         </div>
-        <div>
-          <div className="flex justify-center font-bold text-4xl font-mono w-full mb-20">
-            Projects
-          </div>
-          <div className="flex flex-row">
-            {infos.projects.map((project, index) => {
-              return (
-                <ProjectTile
-                  key={index}
-                  title={project.title}
-                  description={project.description}
-                  stack={project.Stack}
-                  url={project.github}
-                />
-              );
-            })}
-            <ProjectTile
-              className="text-xl"
-              title={"See more on Github"}
-              url={infos.social.github}
-              description={">"}
-            />
-          </div>
-        </div>
+        <Aboutme />
+        <Projects />
+
+        <WorkExperienceTimeline />
+        <Footer />
       </main>
     );
   }

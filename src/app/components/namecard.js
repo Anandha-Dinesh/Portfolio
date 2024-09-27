@@ -7,7 +7,7 @@ const NameCard = () => {
       onMouseEnter={() => setishover(true)}
       onMouseOut={() => setishover(false)}
     >
-      I{"'"}m <span className="font-semibold">Anandha Dinesh</span>
+      I{"'"}m <span className="font-bold text-4xl">Anandha Dinesh</span>
       {"  "}
       {ishover && (
         <span className="text-sm align-text-bottom">

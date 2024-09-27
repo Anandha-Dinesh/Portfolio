@@ -12,7 +12,7 @@ export const infos = {
     {
       title: "Resuts Scrapper",
       description:
-        "This is a web scraper designed to efficiently collect state board exam scores for a large number of students in an automated manner, allowing for rapid data retrieval.",
+        "This is a web scraper designed to efficiently collect state board exam scores on large scale in an automated manner, allowing for rapid data retrieval.",
       github: "https://github.com/Anandha-Dinesh/Results-Scraper",
       Stack: "Nodejs puppeteer",
     },
@@ -29,6 +29,31 @@ export const infos = {
         "URLink is a browser extension that allows users to effortlessly transfer URLs and short messages using QR codes.",
       github: "https://github.com/Anandha-Dinesh/URLink",
       Stack: "Chrome Extension Reactjs",
+    },
+  ],
+  AboutMe:
+    "Hey! I’m Anandha Dinesh, a recent grad with a serious love for all things tech and programming. When I’m not coding, I’m usually building apps just for the fun of it.I’m always up for learning new things, trying out fresh ideas, and tackling challenges that keep me on my toes. Whether it’s coding up cool apps or experimenting with new tech, I’m all in and ready to keep growing.Let’s connect and create something awesome!",
+  Experiences: [
+    {
+      role: "Associate Software Engineer",
+      company: "Infobeans Technologies",
+      date: "May 2024 - Present",
+      description:
+        "Assisted in developing e-commerce websites, ensuring cross-browser compatibility and optimizing SEO performance.",
+    },
+    {
+      role: "Intern",
+      company: "DHL Global Forwarding",
+      date: "Jan 2024 - Apr 2024",
+      description:
+        "Collaborated with designers to create responsive web applications using React and Tailwind CSS. Improved UI consistency and reduced page load times by 25%.",
+    },
+    {
+      role: "Database Intern",
+      company: "NLC India Limited ",
+      date: "Jan 2023 - Jan 2023",
+      description:
+        "I designed and developed the database for the Leave Management System at NLC India Limited. Working alongside seasoned developers really boosted my database skills, particularly in designing it for maximum efficiency",
     },
   ],
 };

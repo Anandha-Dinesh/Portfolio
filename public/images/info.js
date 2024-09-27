@@ -39,14 +39,14 @@ export const infos = {
       company: "Infobeans Technologies",
       date: "May 2024 - Present",
       description:
-        "Assisted in developing e-commerce websites, ensuring cross-browser compatibility and optimizing SEO performance.",
+        "I am working in various stacks and projects, mainly zeroing in on automation and monitoring with alert systems. It’s all about making processes smoother, automating time-consuming tasks, and coming up with innovative solutions to boost productivity.",
     },
     {
       role: "Intern",
       company: "DHL Global Forwarding",
       date: "Jan 2024 - Apr 2024",
       description:
-        "Collaborated with designers to create responsive web applications using React and Tailwind CSS. Improved UI consistency and reduced page load times by 25%.",
+        "I worked with some great professionals and got into automation and analytics. I built several dashboards with Power BI and handled end-to-end automation for the whole process. ",
     },
     {
       role: "Database Intern",

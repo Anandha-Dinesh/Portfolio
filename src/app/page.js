@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+import { loadFull } from "tsparticles";
 import Image from "next/image";
 import Intro from "./sections/intro";
 import NavBar from "./components/navbar";
@@ -147,7 +147,7 @@ const App = () => {
           options={options}
         />
         <NavBar />
-        <div className="flex w-dvw h-dvh overflow-hidden">
+        <div className="flex h-fit  w-dvw md:h-dvh overflow-hidden">
           <Intro />
           <div className="hidden sm:flex sm:flex-1 relative h-dvh justify-center align-middle">
             <Image

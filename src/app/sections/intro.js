@@ -12,28 +12,30 @@ const Intro = () => {
           <div className="mt-4">
             <Titles />
           </div>
-          <div className="mt-10 ml-10 mb-5 text-sm justify-center">
-            {" "}
-            Connect with me in{" "}
-            <div className="flex mt-3 flex-grow mr-4">
-              <div className="flex space-x-5">
-                <a href="mailto:anandhadinesh80@gmail.com" target="_blank">
+          <div className="flex flex-col justify-center">
+            <div className="my-10 text-sm flex flex-col justify-center">
+              {" "}
+              <div> Connect with me in </div>
+              <div className="flex mt-3 flex-grow mr-4">
+                <div className="flex space-x-5">
+                  <a href="mailto:anandhadinesh80@gmail.com" target="_blank">
+                    <Icons
+                      link={"mailto:anandhadinesh80@gmail.com"}
+                      alt="Email"
+                      img={"/images/mail.png"}
+                    />
+                  </a>
                   <Icons
-                    link={"mailto:anandhadinesh80@gmail.com"}
-                    alt="Email"
-                    img={"/images/mail.png"}
+                    link={infos.social.linkedin}
+                    alt="linkedin"
+                    img={"/images/linkedin.svg"}
                   />
-                </a>
-                <Icons
-                  link={infos.social.linkedin}
-                  alt="linkedin"
-                  img={"/images/linkedin.svg"}
-                />
-                <Icons
-                  link={infos.social.github}
-                  alt={"github"}
-                  img={"/images/github.svg"}
-                />
+                  <Icons
+                    link={infos.social.github}
+                    alt={"github"}
+                    img={"/images/github.svg"}
+                  />
+                </div>
               </div>
             </div>
           </div>
